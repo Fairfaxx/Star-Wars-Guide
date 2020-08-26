@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './AnotherApiCall.css';
 import axios from 'axios';
 
 
@@ -12,7 +13,7 @@ const AnotherApiCall = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const response = await axios.get(`https://swapi.dev/api/films/${movieNum}`);
+            const response = await axios.get(`http://swapi.dev/api/films/${movieNum}`);
             setMovie(response.data)
         }
 
@@ -24,7 +25,9 @@ const AnotherApiCall = () => {
 
     return (
         <div>
-            <h1>Pick a Movie</h1>
+            <h1 className='mt-5'>Do you want to watch Star Wars and don't know where to start?</h1>
+            <h2>Follow the saga in order</h2>
+            <h2>Pick a Movie</h2>
             <select value={movieNum} onChange={(e) => setMovieNum(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
