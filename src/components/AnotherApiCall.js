@@ -13,7 +13,7 @@ const AnotherApiCall = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const response = await axios.get(`http://swapi.dev/api/films/${movieNum}`);
+            const response = await axios.get(`https://swapi.dev/api/films/${movieNum}`);
             setMovie(response.data)
         }
 
@@ -25,10 +25,10 @@ const AnotherApiCall = () => {
 
     return (
         <div>
-            <h1 className='mt-5'>Do you want to watch Star Wars and don't know where to start?</h1>
-            <h2>Follow the saga in order</h2>
-            <h2>Pick a Movie</h2>
-            <select value={movieNum} onChange={(e) => setMovieNum(e.target.value)}>
+            <h1 className='mt-5 text-light'>Do you want to watch Star Wars and don't know where to start?</h1>
+            <h2 className='text-light'>Follow the saga in order</h2>
+            <h2 className='text-light'>Pick a Movie</h2>
+            <select className='text-dark' value={movieNum} onChange={(e) => setMovieNum(e.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
@@ -36,9 +36,9 @@ const AnotherApiCall = () => {
                 <option value='5'>5</option>
                 <option value='6'>6</option>
             </select>
-            <h2>Title: {movie.title}</h2>
-            <p>Release: {movie.release_date}</p>
-            <p className='w-50 m-auto'>{movie.opening_crawl}</p>
+            <h2 className='text-light'>Title: {movie.title}</h2>
+            <p className='text-light'>Release: {movie.release_date}</p>
+            <p className='w-50 m-auto text-light'>{movie.opening_crawl}</p>
             {/* <img src={} className="img-fluid" alt="Responsive image" /> */}
         </div>
     )
